@@ -1,124 +1,141 @@
+import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+
+/**
+ * @author ChebroluVirajith
+ * @lastModified 2025-07-24
+ */
 const HowItWorks = () => {
   const steps = [
     {
-      step: "1",
-      title: "Brands Launch Campaigns",
-      description: "Brands upload their brief, set payout per 1K views, and launch campaigns for authentic content creation.",
-      icon: "🎯"
+      icon: "👋",
+      title: "Sign Up & Complete Profile",
+      description: "Create your account and showcase your content creation expertise across different platforms.",
+      color: "from-primary/20 to-accent/20"
     },
     {
-      step: "2",
-      title: "Creators Join & Create",
-      description: "Browse active campaigns, choose what resonates with you, and create engaging content that matches the brief.",
-      icon: "🎨"
+      icon: "🔍",
+      title: "Browse Active Campaigns",
+      description: "Explore campaigns that match your niche and content style. Filter by category, platform, or payout.",
+      color: "from-accent/20 to-secondary/20"
     },
     {
-      step: "3",
-      title: "Post on Social Media",
-      description: "Share your content on Instagram, YouTube, X (Twitter), or other platforms to reach your audience.",
-      icon: "📱"
+      icon: "✍️",
+      title: "Create & Submit Content",
+      description: "Produce engaging content following brand guidelines. Submit for review through our platform.",
+      color: "from-secondary/20 to-primary/20"
     },
     {
-      step: "4",
-      title: "KreatorKart Tracks Views",
-      description: "Our advanced system monitors real views and engagement across all platforms automatically.",
-      icon: "📊"
-    },
-    {
-      step: "5",
-      title: "Get Paid",
-      description: "Receive payments based on verified views. No follower count required - just genuine engagement.",
-      icon: "💰"
+      icon: "💰",
+      title: "Get Paid for Views",
+      description: "Earn based on genuine views and engagement. Track earnings in real-time on your dashboard.",
+      color: "from-primary/20 to-accent/20"
     }
   ];
 
   return (
-    <section id="how-it-works" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="how-it-works" className="relative py-16 lg:py-24 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 gradient-dark"></div>
-        <div className="absolute inset-0 grid-pattern opacity-30"></div>
-        {/* Animated Orbs */}
-        <div className="absolute top-20 left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-[20%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 bg-gradient-dark"></div>
+        {/* Grid Pattern */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}></div>
+        {/* Glowing Lines */}
+        <div className="absolute left-0 top-1/3 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+        <div className="absolute right-0 bottom-1/3 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-            How It{" "}
-            <span className="text-gradient neon-text animate-glow">
-              Works
-            </span>
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4">
+            How <span className="text-gradient">KreatorKart</span> Works
           </h2>
-          <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto animate-float">
-            Simple, transparent, and results-driven. From campaign launch to creator payout in 5 easy steps.
+          <p className="text-muted-foreground/80 max-w-2xl mx-auto">
+            Join our platform in four simple steps and start monetizing your content creation skills
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="relative group perspective-1000">
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-full w-full h-0.5 z-0">
-                    <div className="h-full gradient-neon neon-glow animate-pulse"></div>
-                  </div>
-                )}
-
-                {/* Card */}
-                <div className="relative z-10">
-                  {/* Step Icon & Number */}
-                  <div className="relative mx-auto mb-6">
-                    {/* Outer Circle */}
-                    <div className="w-24 h-24 glass card-highlight neon-glow rounded-2xl shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-[360deg]">
-                      {/* Inner Content */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-3xl transform transition-all duration-500 group-hover:scale-125 animate-float">{step.icon}</div>
-                      </div>
-                      {/* Gradient Border */}
-                      <div className="absolute -inset-px rounded-2xl gradient-neon opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
-
-                    {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-8 h-8 glass rounded-full flex items-center justify-center text-sm font-bold neon-glow">
-                      <div className="text-gradient neon-text">{step.step}</div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="glass card-highlight neon-glow rounded-2xl p-6 transform transition-all duration-500 group-hover:translate-y-[-10px]">
-                    <h3 className="text-lg font-semibold text-gradient neon-text mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                      {step.description}
-                    </p>
-                    
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                </div>
+        {/* Steps Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {steps.map((step, index) => (
+            <div 
+              key={index}
+              className="glass rounded-2xl p-6 relative group hover:scale-105 transition-transform duration-300"
+            >
+              {/* Step Number */}
+              <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full gradient-neon flex items-center justify-center text-sm font-bold">
+                {index + 1}
               </div>
-            ))}
-          </div>
+
+              {/* Icon */}
+              <div className="mb-4 relative">
+                <div className="w-16 h-16 gradient-neon rounded-2xl flex items-center justify-center text-3xl">
+                  {step.icon}
+                </div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-20 blur-2xl transition-opacity duration-300 group-hover:opacity-40"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${step.color})`
+                  }}
+                ></div>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-semibold text-gradient mb-2">
+                {step.title}
+              </h3>
+              <p className="text-muted-foreground/80">
+                {step.description}
+              </p>
+
+              {/* Connector Line (except for last item) */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2 w-6">
+                  <ArrowRight className="w-6 h-6 text-muted-foreground/40" />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
-        {/* Interactive Call to Action */}
-        <div className="text-center mt-20">
-          <div className="glass card-highlight neon-glow rounded-2xl p-8 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-300">
-            <h3 className="text-2xl font-bold text-gradient neon-text mb-4">Ready to Start Your Journey?</h3>
-            <p className="text-lg text-muted-foreground/80 mb-6">Join thousands of creators who are already earning through authentic content</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="gradient-neon text-white px-8 py-3 rounded-xl font-semibold interactive-hover group overflow-hidden relative">
-                <span className="relative z-10">Create Account</span>
-                <div className="absolute inset-0 shimmer"></div>
-              </button>
-              <button className="gradient-border bg-background px-8 py-3 rounded-xl font-semibold interactive-hover">
-                <span className="text-gradient neon-text">Learn More</span>
-              </button>
-            </div>
+        {/* CTA Section */}
+        <div className="text-center">
+          <Button
+            size="lg"
+            variant="outline"
+            className="gradient-border bg-background interactive-hover group"
+          >
+            <span className="text-gradient group-hover:neon-text">Get Started Now</span>
+          </Button>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute -z-10 inset-0">
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-accent/10 to-secondary/10 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="glass rounded-2xl p-6 text-center">
+            <div className="text-3xl font-bold text-gradient mb-2">10K+</div>
+            <div className="text-sm text-muted-foreground/80">Active Creators</div>
+          </div>
+          <div className="glass rounded-2xl p-6 text-center">
+            <div className="text-3xl font-bold text-gradient mb-2">₹50L+</div>
+            <div className="text-sm text-muted-foreground/80">Paid to Creators</div>
+          </div>
+          <div className="glass rounded-2xl p-6 text-center">
+            <div className="text-3xl font-bold text-gradient mb-2">200+</div>
+            <div className="text-sm text-muted-foreground/80">Brand Partners</div>
+          </div>
+          <div className="glass rounded-2xl p-6 text-center">
+            <div className="text-3xl font-bold text-gradient mb-2">98%</div>
+            <div className="text-sm text-muted-foreground/80">Success Rate</div>
           </div>
         </div>
       </div>
