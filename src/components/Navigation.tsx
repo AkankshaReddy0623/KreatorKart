@@ -8,29 +8,29 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-slate-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 gradient-neon rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">K</span>
             </div>
-            <span className="text-xl font-bold text-foreground">KreatorKart</span>
+            <span className="text-xl font-bold text-gradient">KreatorKart</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#how-it-works" className="text-muted-foreground hover:text-gradient transition-all">
               How It Works
             </a>
-            <a href="#for-creators" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#for-creators" className="text-muted-foreground hover:text-gradient transition-all">
               For Creators
             </a>
-            <a href="#for-brands" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#for-brands" className="text-muted-foreground hover:text-gradient transition-all">
               For Brands
             </a>
-            <a href="#campaigns" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#campaigns" className="text-muted-foreground hover:text-gradient transition-all">
               Campaigns
             </a>
           </div>
@@ -39,16 +39,21 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
-              className="bg-white border border-border text-primary hover:bg-accent"
+              className="gradient-border bg-background text-primary hover:scale-105 transition-transform duration-300"
               onClick={() => navigate('/wallet')}
             >
               <Wallet className="w-4 h-4 mr-2" />
               Wallet
             </Button>
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <Button 
+              variant="ghost" 
+              className="text-muted-foreground hover:text-gradient hover:scale-105 transition-all duration-300"
+            >
               Log In
             </Button>
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button 
+              className="gradient-neon text-white hover:scale-105 transition-transform duration-300"
+            >
               Sign Up
             </Button>
           </div>
@@ -68,33 +73,38 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border glass">
             <div className="flex flex-col space-y-4">
-              <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#how-it-works" className="text-muted-foreground hover:text-gradient transition-all px-4">
                 How It Works
               </a>
-              <a href="#for-creators" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#for-creators" className="text-muted-foreground hover:text-gradient transition-all px-4">
                 For Creators
               </a>
-              <a href="#for-brands" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#for-brands" className="text-muted-foreground hover:text-gradient transition-all px-4">
                 For Brands
               </a>
-              <a href="#campaigns" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#campaigns" className="text-muted-foreground hover:text-gradient transition-all px-4">
                 Campaigns
               </a>
-              <div className="flex flex-col space-y-2 pt-4">
+              <div className="flex flex-col space-y-2 pt-4 px-4">
                 <Button 
                   variant="outline" 
-                  className="bg-white border border-border text-primary hover:bg-accent justify-start"
+                  className="gradient-border bg-background text-primary hover:scale-105 transition-transform duration-300 justify-start"
                   onClick={() => navigate('/wallet')}
                 >
                   <Wallet className="w-4 h-4 mr-2" />
                   Wallet
                 </Button>
-                <Button variant="ghost" className="justify-start">
+                <Button 
+                  variant="ghost" 
+                  className="text-muted-foreground hover:text-gradient hover:scale-105 transition-all duration-300 justify-start"
+                >
                   Log In
                 </Button>
-                <Button className="bg-primary hover:bg-primary/90">
+                <Button 
+                  className="gradient-neon text-white hover:scale-105 transition-transform duration-300"
+                >
                   Sign Up
                 </Button>
               </div>
